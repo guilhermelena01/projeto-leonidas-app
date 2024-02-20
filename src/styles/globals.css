@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* @font-face {
+  font-family: "Via-Appia";
+  src: url("/fonts/Via-Appia.ttf") format("ttf")
+} */
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -17,13 +21,6 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
