@@ -14,11 +14,12 @@ const SlideShow = ({ images, interval}) => {
   }, [images, interval]);
 
   return (
-    <div className="slideshow">
+    <div className="flex lg:h-[720px]">
       <img
         src={images[index]}
         alt={`Slide ${index + 1}`}
-        style={{ maxWidth: '100%', maxHeight: '100%' }}
+        // style={{ maxWidth: '100%', maxHeight: '100%' }}
+        className='w-[30rem] lg:w-[40rem] h-48 lg:h-[720px] flex'
       />
     </div>
   );

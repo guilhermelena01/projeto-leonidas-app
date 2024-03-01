@@ -1,5 +1,4 @@
 import { CloseIcon, HamburgerIcon } from "@/src/assets/fonts/svg/SvgComponents"
-import styles from "@/src/styles/Menu.module.css"
 import { useState } from "react"
 
 export default function Menu() {

@@ -2,15 +2,24 @@ import Link from "next/link";
 import Menu from "../components/Menu";
 import SlideShow from "../components/SlideShow";
 import FotoInsta from "@/src/assets/img/420517857_391683869892802_4398154841072913416_n 2.png"
-import ImageSaladaBackground from "@/src/assets/img/36752415-ai-gerado-de-varias-tacas-do-saladas-em-uma-mesa-gratis-foto.jpg"
 import Image from "next/image";
+import { useState } from "react";
+import { EnumPictureType } from "../util/types";
 
 export default function Home() {
-  const images = [
-    'https://img.freepik.com/fotos-gratis/foto-de-grande-angular-de-uma-unica-arvore-crescendo-sob-um-ceu-nublado-durante-um-por-do-sol-cercado-por-grama_181624-22807.jpg?size=626&ext=jpg&ga=GA1.1.1700460183.1708473600&semt=ais',
-    'https://st3.depositphotos.com/1021722/33394/i/450/depositphotos_333943612-stock-photo-beautiful-nature-countryside-landscape-spring.jpg',
-    'https://static5.depositphotos.com/1001686/397/i/450/depositphotos_3974596-stock-photo-landscape-on-sunset.jpg'
-  ]
+
+  const [pictureId, setPictureId] = useState(0)
+  
+  function switchPicture(picId: any) {
+    switch (picId) {
+      case EnumPictureType.PIC1:
+        return setPictureId(1)
+        case EnumPictureType.PIC2:
+          return setPictureId(2)
+          case EnumPictureType.PIC3:
+            return setPictureId(3)
+    }
+  }
 
   return (
     <>
@@ -33,12 +42,25 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="w-full flex font-via-appia bg-primary text-white flex-col justify-center items-center mt-4 md:text-xl lg:text-2xl xl:text-[40px]" id="cardapio">
+      <div className="w-full flex font-via-appia bg-primary text-white flex-col items-center mt-4 md:text-xl lg:text-2xl xl:text-[40px] h-72" id="cardapio">
         <h1 className="py-3 xl:my-14">
           CONHEÇA NOSSO CARDÁPIO ESPECIAL
         </h1>
-        <div className="w-full flex max-h-48 md:max-h-64 lg:max-h-80 xl:h-[788px]">
-          <SlideShow images={images} interval={3000} />
+        <div className="w-full flex">
+          <div className="w-full relative">
+            <img src="/30745783-cafe-da-manha-sanduiche-saudavel-cheio-de-proteina-gratis-foto.jpg" alt="" />
+            <span className="text-white absolute top-0 w-1/2 right-0 h-full px-3 py-6" style={{backgroundColor: "rgba(115, 86, 61, 0.6)"}}>
+              <h3 className="text-sm mb-4">
+                SANDUBA DO REI LEÔNIDAS, UM SANDUICHE DIGNO DE UM REI
+              </h3>
+              <p className="text-xs">
+                O Sanduba do Rei Leônidas leva, não só o nome do nosso restaurante, mas também tudo o que queremos entregar a nossos clientes: ingredientes selecionados, sabor inigualável e uma experiência única.
+              </p>
+            </span>
+          </div>
+
+          <img src="/36752415-ai-gerado-de-varias-tacas-do-saladas-em-uma-mesa-gratis-foto.jpg" alt="" className="hidden" />
+          <img src="/sucos-naturais.jpeg" alt="" className="hidden" />
         </div>
       </div>
 
@@ -70,18 +92,18 @@ export default function Home() {
       </div>
 
       <div className="w-full flex flex-col sm:flex-row relative py-4 bg-primary md:bg-white font-via-appia text-white md:justify-center md:gap-x-12 xl:gap-x-24">
-        <Image src={ImageSaladaBackground} alt="Prato de saladas Leonidas" className="absolute hidden" />
-        <h1 className="hidden md:flex text-4xl xl:text-6xl text-primary absolute">ENTRE EM CONTATO</h1>
+        <img src="/36752415-ai-gerado-de-varias-tacas-do-saladas-em-uma-mesa-gratis-foto.jpg" alt="Prato de saladas Leonidas" className="absolute hidden" />
+        <h1 className="hidden md:flex text-4xl xl:text-6xl text-primary absolute xl:mt-8">ENTRE EM CONTATO</h1>
         <form className="w-full flex flex-col justify-center items-center gap-y-2 px-4 text-white pb-8 md:mt-16 xl:mt-32 md:pl-32 xl:pl-72 md:relative">
           <h2 className="text-lg md:hidden">ENTRE EM CONTATO</h2>
-          <input placeholder="Nome completo" type="text" className="w-full" />
-          <input placeholder="Seu melhor e-mail" type="email" className="w-full" />
-          <input placeholder="Seu telefone" type="tel" className="w-full" />
-          <input placeholder="Qual o assunto?" type="text" className="w-full" />
-          <textarea placeholder="Como podemos te ajudar?" id="" cols={30} rows={10} className="w-full"></textarea>
-          <button className="bg-white text-primary p-2 md:absolute left-0">ENVIAR FORMULÁRIO</button>
+          <input placeholder="Nome completo" type="text" className="w-full xl:text-xl" />
+          <input placeholder="Seu melhor e-mail" type="email" className="w-full xl:text-xl" />
+          <input placeholder="Seu telefone" type="tel" className="w-full xl:text-xl" />
+          <input placeholder="Qual o assunto?" type="text" className="w-full xl:text-xl" />
+          <textarea placeholder="Como podemos te ajudar?" id="" cols={30} rows={10} className="w-full xl:text-xl"></textarea>
+          <button className="bg-white text-primary p-2 md:absolute -bottom-6 left-32 xl:left-72 border xl:text-xl">ENVIAR FORMULÁRIO</button>
         </form>
-        
+
         <div className="w-full flex flex-col items-center justify-center text-white md:text-primary md:flex-row md:mt-16 xl:mt-32 md:justify-normal md:items-start">
           <div className="flex md:flex-col gap-x-4">
 
@@ -111,7 +133,7 @@ export default function Home() {
         </div>
       </div>
 
-      <footer className="w-full flex items-center justify-center bg-white text-primary py-2 font-via-appia">
+      <footer className="w-full flex items-center justify-center bg-white text-primary py-2 font-via-appia md:bg-primary md:text-white md:mt-8 md:py-4 xl:text-lg">
         <p>Desenvolvido por Guilherme Lena</p>
       </footer>
     </>
