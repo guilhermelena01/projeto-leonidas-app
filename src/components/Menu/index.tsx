@@ -1,4 +1,5 @@
 import { CloseIcon, HamburgerIcon } from "@/src/assets/fonts/svg/SvgComponents"
+import Link from "next/link"
 import { useState } from "react"
 
 export default function Menu() {
@@ -8,11 +9,11 @@ export default function Menu() {
         <>
             <div className="z-30 fixed w-full hidden sm:block">
                 <div style={{ width: "100%", height: "80px", display: "flex", fontSize: "20px", color: "white", backgroundColor: "rgba(115, 86, 61, 0.8)    ", justifyContent: "center", columnGap: "46px" }} className="font-via-appia">
-                    <button>HOME</button>
-                    <button>NOSSOS VALORES E MISSÃO</button>
+                    <button><Link href="#home">HOME</Link></button>
+                    <button><Link href="#nosso-lema">NOSSO LEMA</Link></button>
                     <button style={{ fontSize: "38px" }}>LEÔNIDAS</button>
-                    <button>CARDÁPIO</button>
-                    <button>CONTATO</button>
+                    <button><Link href="#cardapio">CARDÁPIO</Link></button>
+                    <button><Link href="#contato">CONTATO</Link></button>
                 </div>
             </div>
 
@@ -27,11 +28,11 @@ export default function Menu() {
             {showMobileMenu &&
                 <div className="bg-primary w-full h-screen fixed top-0 z-30">
                     <div className="w-full flex flex-col justify-center items-center text-white font-via-appia mt-52 gap-y-8 text-lg">
-                        <button>HOME</button>
-                        <button>NOSSOS VALORES E MISSÃO</button>
-                        <button style={{ fontSize: "38px" }}>LEÔNIDAS</button>
-                        <button>CARDÁPIO</button>
-                        <button>CONTATO</button>
+                    <button><Link href="#home">HOME</Link></button>
+                    <button><Link href="#nosso-lema">NOSSO LEMA</Link></button>
+                    <button style={{ fontSize: "38px" }}>LEÔNIDAS</button>
+                    <button><Link href="#cardapio">CARDÁPIO</Link></button>
+                    <button><Link href="#contato">CONTATO</Link></button>
                     </div>
                 </div>
             }
