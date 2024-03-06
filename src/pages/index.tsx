@@ -15,7 +15,7 @@ export default function Home() {
     {
       pic1:
         <div className="w-full flex relative">
-          <img src="/sanduba-rei-leonidas.png" className="w-full" />,
+          <Image src="/sanduba-rei-leonidas.png" alt="sanduba do rei leonidas" className="w-full" />,
           <span className="text-white absolute top-0 w-1/2 right-0 h-full px-3 py-6 sm:p-14 sm:pt-24" style={{ backgroundColor: "rgba(115, 86, 61, 0.6)" }}>
             <h3 className="text-sm sm:text-lg lg:text-4xl xl:text-5xl mb-4">
               SANDUBA DO REI LEÔNIDAS
@@ -27,7 +27,7 @@ export default function Home() {
         </div>,
       pic2:
         <div className="w-full flex relative">
-          <img src="/36752415-ai-gerado-de-varias-tacas-do-saladas-em-uma-mesa-gratis-foto.jpg" className="w-full" />
+          <Image src="/36752415-ai-gerado-de-varias-tacas-do-saladas-em-uma-mesa-gratis-foto.jpg" alt="salada ateniense" className="w-full" />
           <span className="text-white absolute top-0 w-1/2 right-0 h-full px-3 py-6 sm:p-14 sm:pt-24" style={{ backgroundColor: "rgba(115, 86, 61, 0.6)" }}>
             <h3 className="text-sm sm:text-lg lg:text-4xl xl:text-5xl mb-4">
               SALADA ATENIENSE
@@ -39,7 +39,7 @@ export default function Home() {
         </div>,
       pic3:
         <div className="w-full flex relative">
-          <img src="/20220201144535-sucosnaturais-header-fita-scaled.jpg" className="w-full" />
+          <Image src="/20220201144535-sucosnaturais-header-fita-scaled.jpg" alt="vitamina dos deuses" className="w-full" />
           <span className="text-white absolute top-0 w-1/2 right-0 h-full px-3 py-6 sm:p-14 sm:pt-24" style={{ backgroundColor: "rgba(115, 86, 61, 0.6)" }}>
             <h3 className="text-sm sm:text-lg lg:text-4xl xl:text-5xl mb-4">
               VITAMINA DOS DEUSES
@@ -137,7 +137,7 @@ export default function Home() {
         </div>
 
         <div id="contato" className="w-full flex flex-col sm:flex-row relative py-4 lg:p-0 bg-white font-via-appia text-primary md:justify-center">
-          <img src="/36752415-ai-gerado-de-varias-tacas-do-saladas-em-uma-mesa-gratis-foto.jpg" alt="Prato de saladas Leonidas" className="w-full hidden lg:flex opacity-60 h-[760px]" />
+          <Image src="/36752415-ai-gerado-de-varias-tacas-do-saladas-em-uma-mesa-gratis-foto.jpg" alt="Prato de saladas Leonidas" className="w-full hidden lg:flex opacity-60 h-[760px]" />
           <h1 className="hidden md:flex text-4xl xl:text-6xl absolute xl:mt-8 drop-shadow-[0_1px_1px_rgba(0,0,0,8)] lg:text-white">ENTRE EM CONTATO</h1>
           <div className="w-full lg:absolute lg:flex md:gap-x-12 xl:gap-x-24">
             <form className="w-full flex flex-col justify-center items-center gap-y-2 px-4 pb-8 pt-2 md:mt-16 xl:mt-32 xl:pl-72 md:relative">
