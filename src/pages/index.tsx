@@ -5,26 +5,11 @@ import FotoInsta from "@/src/assets/img/420517857_391683869892802_43981548410729
 import { useState } from "react";
 import { ArrowSvgToLeft, ArrowSvgToRight } from "../assets/svgIcons";
 import VideoPlayer from "../components/Video";
+import { useHelp } from "../hooks/useHelp";
 
 export default function Home() {
 
-  const [pictureId, setPictureId] = useState(0)
-
-  function switchPicToRight() {
-    if (pictureId == 0) {
-      setPictureId(1)
-    } else if (pictureId == 1) {
-      setPictureId(2)
-    }
-  }
-
-  function switchPicTLeft() {
-    if (pictureId == 2) {
-      setPictureId(1)
-    } else if (pictureId == 1) {
-      setPictureId(0)
-    }
-  }
+  const helpHook = useHelp()
 
   const pictures = [
     {
@@ -94,8 +79,8 @@ export default function Home() {
             CONHEÇA NOSSO CARDÁPIO ESPECIAL
           </h1>
           <div className="w-full flex h-40 sm:h-72 lg:h-[658px]">
-            {pictures.map(picture => (pictureId == 0 ? picture.pic1 : pictureId == 1 ? picture.pic2 : picture.pic3))}
-            <button onClick={switchPicTLeft} className={`absolute left-2 mt-14 sm:mt-28 lg:mt-60 ${pictureId == 0 && "hidden"}`}>
+            {pictures.map(picture => (helpHook.pictureId == 0 ? picture.pic1 : helpHook.pictureId == 1 ? picture.pic2 : picture.pic3))}
+            <button onClick={helpHook.switchPicTLeft} className={`absolute left-2 mt-14 sm:mt-28 lg:mt-60 ${helpHook.pictureId == 0 && "hidden"}`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -108,7 +93,7 @@ export default function Home() {
                 ></path>
               </svg>
             </button>
-            <button onClick={switchPicToRight} className={`absolute right-2 mt-14 sm:mt-28 lg:mt-60 rotate-180 ${pictureId == 2 && "hidden"}`}>
+            <button onClick={helpHook.switchPicToRight} className={`absolute right-2 mt-14 sm:mt-28 lg:mt-60 rotate-180 ${helpHook.pictureId == 2 && "hidden"}`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
