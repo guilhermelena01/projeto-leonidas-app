@@ -6,7 +6,6 @@ import SandubaReiLeonidas from "../../public/sanduba-rei-leonidas.png"
 import SanduicheNatureba from "../../public/sanduiche-natural.jpg"
 import SaladaLeonidas from "@/public/36752415-ai-gerado-de-varias-tacas-do-saladas-em-uma-mesa-gratis-foto.jpg"
 import VitaminaDosDeus from "@/public/20220201144535-sucosnaturais-header-fita-scaled.jpg"
-import VideoPlayer from "../components/Video";
 import { useHelp } from "../hooks/useHelp";
 
 export default function Home() {
@@ -58,19 +57,12 @@ export default function Home() {
     <>
       <Menu />
       <div className="w-full overflow-x-hidden">
-        <div id="home">
-          <div className="relative w-full">
-            <span className="md:text-xl xl:text-6xl absolute z-10 inset-0 text-white p-48">
-              Prepare-se para uma verdadeira revolução alimentar: saborosa, nutritiva e medicinal.
-            </span>
-          </div>
+        <div id="home" className="relative">
+          <p className="absolute z-30 inset-0 text-white text-2xl lg:text-5xl xl:text-6xl top-20 lg:top-72 xl:top-96 px-12 xl:px-72 text-center">Prepare-se para uma verdadeira revolução alimentar: saborosa, nutritiva e medicinal.</p>
           <Image src={SanduicheNatureba} alt="" className="brightness-75 w-full"/>
         </div>
         <div id="nosso-lema" className="w-full text-primary px-8 lg:px-16 xl:px-48 2xl:px-72 xl:py-32">
-          <h1 className="text-3xl my-8 xl:my-16 lg:text-4xl 2xl:text-6xl">
-            “Transforme suas capacidades com os segredos milenares dos guerreiros espartanos e dos filósofos atenienses.”
-          </h1>
-          <p className="sm:text-lg xl:text-xl 2xl:text-2xl">
+          <p className="sm:text-lg xl:text-xl 2xl:text-4xl">
             Bem-vindo ao Leonida’s, onde a tradição e a inovação se unem para criar uma experiência gastronômica verdadeiramente transformadora. Inspirados pelos antigos guerreiros espartanos e pelos sábios filósofos atenienses, buscamos não apenas alimentar o corpo, mas também nutrir a alma. <br /><br />
 
             Em um mundo onde a correria muitas vezes obscurece a importância da alimentação saudável, encontramos na história e na filosofia da Grécia Antiga uma fonte de inspiração e sabedoria. Acreditamos nos segredos milenares que podem transformar não apenas o que comemos, mas também quem somos. <br /><br />

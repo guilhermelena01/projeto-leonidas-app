@@ -1,8 +1,8 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export function useHelp() {
     const [pictureId, setPictureId] = useState(0)
-
+    const [scrollTop, setScrollTop] = useState(0)
     function switchPicToRight() {
         if (pictureId == 0) {
             setPictureId(1)
@@ -19,8 +19,22 @@ export function useHelp() {
         }
     }
 
+    useEffect(() => {
+        const handleScroll = (event: any) => {
+            setScrollTop(window.scrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return {
         pictureId,
+        scrollTop,
+        setScrollTop,
         setPictureId,
         switchPicTLeft,
         switchPicToRight

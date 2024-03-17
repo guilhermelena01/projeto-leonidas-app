@@ -1,14 +1,16 @@
 import { CloseIcon, HamburgerIcon } from "@/src/assets/fonts/svg/SvgComponents"
+import { useHelp } from "@/src/hooks/useHelp"
 import Link from "next/link"
 import { useState } from "react"
 
 export default function Menu() {
     const [showMobileMenu, setShowMobileMenu] = useState(false)
+    const helpHook = useHelp()
 
     return (
         <>
-            <div className="z-30 fixed w-full hidden sm:block">
-                <div style={{ width: "100%", height: "80px", display: "flex", fontSize: "20px", color: "white", backgroundColor: "rgba(115, 86, 61, 0.8)    ", justifyContent: "center", columnGap: "46px" }} className="font-via-appia">
+            <div className="z-50 fixed w-full hidden sm:block">
+                <div className={`w-full font-via-appia gap-x-11 justify-center flex text-xl h-20 text-white ${helpHook.scrollTop !== 0 && "bg-primary rounded-b-2xl"}`}>
                     <button><Link className="hover:font-bold" href="#home">HOME</Link></button>
                     <button><Link className="hover:font-bold" href="#nosso-lema">NOSSO LEMA</Link></button>
                     <button className="cursor-default" style={{ fontSize: "38px" }}>LEÔNIDAS</button>
