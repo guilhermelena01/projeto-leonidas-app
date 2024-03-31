@@ -10,7 +10,7 @@ export default function Menu() {
     return (
         <>
             <div className="z-50 fixed w-full hidden sm:block">
-                <div className={`w-full font-via-appia gap-x-11 justify-center flex text-xl h-20 text-white ${helpHook.scrollTop !== 0 && "bg-primary rounded-b-2xl"}`}>
+                <div className={`w-full font-via-appia gap-x-11 justify-center flex text-xl h-20 text-white ${helpHook.scrollTop !== 0 && "bg-black rounded-b-2xl"}`}>
                     <button><Link className="hover:font-bold" href="#home">HOME</Link></button>
                     <button><Link className="hover:font-bold" href="#nosso-lema">NOSSO LEMA</Link></button>
                     <button className="cursor-default" style={{ fontSize: "38px" }}>LEÔNIDAS</button>
@@ -28,7 +28,7 @@ export default function Menu() {
                 </button>}
 
             {showMobileMenu &&
-                <div className="bg-primary w-full h-screen fixed top-0 z-30">
+                <div className="bg-black w-full h-screen fixed top-0 z-30">
                     <div className="w-full flex flex-col justify-center items-center text-white font-via-appia mt-52 gap-y-8 text-lg">
                     <button><Link href="#home">HOME</Link></button>
                     <button><Link href="#nosso-lema">NOSSO LEMA</Link></button>
