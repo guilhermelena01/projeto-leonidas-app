@@ -3,3 +3,12 @@ export enum EnumPictureType {
     PIC2 = "PIC2",
     PIC3 = "PIC3"
 }
+
+export type EmailData = {
+    name: string
+    email: string
+    topic: string
+    phone: string
+    base64: string
+    message: string
+}
