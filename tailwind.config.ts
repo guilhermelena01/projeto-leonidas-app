@@ -17,7 +17,6 @@ const config: Config = {
         "primary": "#73563D"
       },
       fontFamily: {
-        "via-appia": ["Via Appia", "sans-serif"]
       }
     },
   },

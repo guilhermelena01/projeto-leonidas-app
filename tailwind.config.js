@@ -18,8 +18,6 @@ module.exports = {
         'ubuntu-light': ['Ubuntu-Light', 'sans-serif'],
         'ubuntu-regular': ['Ubuntu-Regular', 'sans-serif'],
         'ubuntu-bold': ['Ubuntu-Bold', 'sans-serif'],
-        'akceleraalt': ['Akceleraalt', 'sans-serif'],
-        "via-appia": ["Via Appia", "sans-serif"]
       },
     },
 

@@ -1,4 +1,3 @@
-import localFont from 'next/font/local';
 import Link from "next/link";
 import Image from "next/image";
 import Menu from "../components/Menu";
@@ -8,15 +7,13 @@ import SaladaLeonidas from "@/public/36752415-ai-gerado-de-varias-tacas-do-salad
 import { useHelp } from "../hooks/useHelp";
 import { maskPhone } from "../util/utils";
 import { Pics } from "../components/Pics";
-
-export const mainFontFamily = localFont({
-  src: '../assets/fonts/Via-Appia.ttf',
-})
+import { useState } from "react";
 
 export default function Home() {
-  
+
   const helpHook = useHelp()
   const pictures = Pics()
+  const [zoomIn, setZoomIn] = useState(false)
   let user = process.env.NEXT_PUBLIC_USERNAME
   let pass = process.env.NEXT_PUBLIC_PASSWORD
 
@@ -40,13 +37,12 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="w-full flex bg-black text-white flex-col items-center mt-4 md:mt-12 md:text-xl lg:text-2xl xl:text-[40px]" id="cardapio">
-          <h1 className="py-3 xl:my-14">
+        <div className={`w-full flex ${zoomIn ? "h-full" : "h-[1080px]"} overflow-hidden bg-[#210140] text-white flex-col items-center mt-4 md:mt-12 md:text-xl lg:text-2xl xl:text-[40px]`} id="cardapio">
+          <h1 className="my-4 xl:my-14">
             CONHEÇA NOSSO CARDÁPIO ESPECIAL
           </h1>
-          <div className="w-full flex h-40 sm:h-72 lg:h-[658px]">
-            {pictures.pictures.map(picture => (helpHook.pictureId == 0 ? picture.pic1 : helpHook.pictureId == 1 ? picture.pic2 : picture.pic3))}
-            <button onClick={helpHook.switchPicTLeft} className={`absolute left-4 mt-14 sm:mt-28 lg:mt-60 transition-all duration-300 hover:scale-105 ${helpHook.pictureId == 0 && "hidden"}`}>
+          <div className={`w-full flex relative ${zoomIn ? "h-full" : "h-[900px]"}`} onClick={() => setZoomIn(!zoomIn)}>
+            <button onClick={helpHook.switchPicTLeft} className={`absolute left-4 inset-y-0 transition-all duration-300 hover:scale-105 ${helpHook.pictureId == 0 && "hidden"}`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -59,7 +55,7 @@ export default function Home() {
                 ></path>
               </svg>
             </button>
-            <button onClick={helpHook.switchPicToRight} className={`absolute right-4 mt-14 sm:mt-28 lg:mt-60 rotate-180 transition-all duration-300 hover:scale-105 ${helpHook.pictureId == 2 && "hidden"}`}>
+            <button onClick={helpHook.switchPicToRight} className={`absolute right-4 inset-y-0 rotate-180 transition-all duration-300 hover:scale-105 ${helpHook.pictureId == 2 && "hidden"}`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

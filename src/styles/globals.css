@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 @font-face {
-  font-family: "Via-Appia";
-  src:url("/via-appia.woff") format("woff"),
-      url("/Via-Appia.ttf") format("ttf");
-  font-weight: normal;
-  font-style: normal;
 }
 
 @layer base {
@@ -30,7 +25,6 @@
 }
 
 body {
-  font-family: "Via-Appia", sans-serif;
 }
 
 @layer utilities {

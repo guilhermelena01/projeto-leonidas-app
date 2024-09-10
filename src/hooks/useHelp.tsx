@@ -2,13 +2,6 @@ import { useEffect, useState } from "react"
 import { FormEvent } from "react";
 
 export function useHelp() {
-    // const [form, setForm] = useState({
-    //     name: "",
-    //     email: "",
-    //     phone: "",
-    //     topic: "",
-    //     message: ""
-    // })
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
@@ -17,6 +10,7 @@ export function useHelp() {
     const [file, setFile] = useState<File>()
     const [pictureId, setPictureId] = useState(0)
     const [scrollTop, setScrollTop] = useState(0)
+
     function switchPicToRight() {
         if (pictureId == 0) {
             setPictureId(1)
@@ -47,12 +41,6 @@ export function useHelp() {
 
     function sendEmail(event: FormEvent) {
         event.preventDefault();
-        // console.log(form.email, form.message, form.name, form.phone, form.topic)
-
-        // if (name == '' || email == '' || phone == '' || topic == '') {
-        //     setMenuId(13)
-        //     return;
-        // }
         const reader = new FileReader();
 
         if (file) {
