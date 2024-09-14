@@ -12,3 +12,9 @@ export type EmailData = {
     base64: string
     message: string
 }
+
+export type SvgProps = {
+    width?: string;
+    height?: string;
+    fill?: string;
+}

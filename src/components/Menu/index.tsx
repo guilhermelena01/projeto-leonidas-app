@@ -4,6 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import LogoLeonidas from "@/src/assets/logo-leonidas.png"
 import Image from "next/image"
+import { font } from "@/src/pages"
 
 export default function Menu() {
     const [showMobileMenu, setShowMobileMenu] = useState(false)
@@ -11,15 +12,16 @@ export default function Menu() {
 
     return (
         <>
-            <div className={`z-50 fixed w-full hidden sm:block`}>
+            <div className={`z-50 fixed w-full hidden sm:block ${font.className}`}>
                 <div className={`w-full justify-center items-center flex text-xl h-48 text-white transition-all duration-200
                     ${helpHook.scrollTop !== 0 && "bg-[#210140] rounded-b-2xl"}`}>
                     <Image src={LogoLeonidas} alt="logo leonidas sanduba" className="absolute top-8" />
                     <span className="flex gap-x-16 mt-16">
-                        <Link className="hover:font-bold hover:text-[#D90302]" href="#home">HOME</Link>
-                        <Link className="hover:font-bold hover:text-[#D90302]" href="#nosso-lema">NOSSO LEMA</Link>
-                        <Link className="hover:font-bold hover:text-[#D90302]" href="#cardapio">CARDÁPIO</Link>
-                        <Link className="hover:font-bold hover:text-[#D90302]" href="#contato">CONTATO</Link>
+                        <Link className="hover:text-[#73e831]" href="#home">Home</Link>
+                        <Link className="hover:text-[#73e831]" href="#nosso-lema">Nosso lema</Link>
+                        <Link className="hover:text-[#73e831]" href="#cardapio">Cardápio</Link>
+                        <Link className="hover:text-[#73e831]" href="#social-media">Nossas mídias socias</Link>
+                        <Link className="hover:text-[#73e831]" href="#location">Nossa casa</Link>
                     </span>
                 </div>
             </div>
