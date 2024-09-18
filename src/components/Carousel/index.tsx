@@ -3,7 +3,7 @@ import Image, { StaticImageData } from 'next/image';
 import React, { useState, useRef } from 'react';
 
 interface CarouselProps {
-    images: Array<Array<string | StaticImageData>>;
+    images: Array<Array<string | any>>;
 }
 
 const Carousel: React.FC<CarouselProps> = ({ images }) => {
@@ -73,7 +73,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
                                 alt={`Slide ${index}`}
                                 className="w-1/3 flex hover:scale-110 hover:cursor-zoom-in duration-200 ease-in-out transition-transform"
                                 key={index}
-                                onClick={() => getSrc(img.toString())}
+                                onClick={() => getSrc(img)}
                             />
                         ))}
                     </div>
