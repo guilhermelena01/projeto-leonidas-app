@@ -5,10 +5,9 @@ import Menu from "../components/Menu";
 import FotoInsta from "@/src/assets/img/420517857_391683869892802_4398154841072913416_n 2.png"
 import SanduicheNatureba from "../../public/sanduiche-natural.jpg"
 import { useHelp } from "../hooks/useHelp";
-import { Pics } from "../components/Pics";
 import { useState } from "react";
 import { PinIcon } from "../assets/svgIcons";
-import { CarouselCustomNavigation } from "../components/Carousel";
+import Carousel from "../components/Carousel";
 
 export const font = Noto_Serif_JP({
   weight: ["400"],
@@ -17,7 +16,6 @@ export const font = Noto_Serif_JP({
 
 export default function Home() {
   const helpHook = useHelp()
-  const pictures = Pics()
   const [zoomIn, setZoomIn] = useState(false)
 
   return (
@@ -41,13 +39,15 @@ export default function Home() {
         </div>
 
         <div
-          className={`w-full flex ${zoomIn ? "h-full" : "h-[1080px]"} overflow-hidden bg-[#210140] text-white flex-col items-center mt-4 md:mt-12 md:text-xl lg:text-2xl xl:text-4xl`}
+          className={`w-full flex overflow-hidden bg-[#210140] text-white flex-col items-center mt-4 md:mt-12 md:text-xl lg:text-2xl xl:text-4xl`}
           id="cardapio">
           <h1 className="my-4 xl:my-14">
             CONHEÇA NOSSO CARDÁPIO ESPECIAL
           </h1>
-          <CarouselCustomNavigation />
-          {/* <div className={`w-full flex relative ${zoomIn ? "h-full" : "h-[900px]"}`} onClick={() => setZoomIn(!zoomIn)}>
+          <Carousel
+            images={helpHook.images}
+          />
+          {/* <div className={`w-full flex relative ${zoomIn ? "h-full" : "h-[900px]"}`}>
             <button onClick={helpHook.switchPicTLeft} className={`absolute left-4 inset-y-0 transition-all duration-300 hover:scale-105 ${helpHook.pictureId == 0 && "hidden"}`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -73,8 +73,8 @@ export default function Home() {
                   d="M24.378 0c.412 0 .833.138 1.148.405.632.534.632 1.408 0 1.942L3.917 20.64l21.294 18.017c.631.534.631 1.408 0 1.942-.631.535-1.665.535-2.296 0L.474 21.611c-.632-.534-.632-1.408 0-1.943L23.23.405A1.794 1.794 0 0124.379 0z"
                 ></path>
               </svg>
-            </button>
-          </div> */}
+            </button> 
+          </div>*/}
         </div>
 
         <section className="w-full flex flex-col items-center justify-center px-16 py-8 md:py-8 xl:py-32 text-black gap-8" id="social-media">
@@ -97,7 +97,7 @@ export default function Home() {
             <h2 className="text-lg md:text-2xl xl:text-4xl md:text-center">
               VENHA CONHECER NOSSA CASA!
             </h2>
-            <span className="hidden md:block"><PinIcon width="100" height="100" /></span>
+            <span className="hidden md:block"><PinIcon width={100} height={100} /></span>
             <span className="flex md:flex-col items-center">
               <p className="md:text-xl text-center md:w-60">
                 R. Afonso Pena, 1672

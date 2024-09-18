@@ -14,7 +14,8 @@ export type EmailData = {
 }
 
 export type SvgProps = {
-    width?: string;
-    height?: string;
+    width?: number;
+    height?: number;
     fill?: string;
+    rotate?: boolean;
 }
