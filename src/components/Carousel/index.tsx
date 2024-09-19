@@ -95,10 +95,12 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
             {showSelectedImage &&
                 <>
                     <div className='fixed inset-0 bg-gray-500 z-50 opacity-40'></div>
-                    <span className='fixed z-50 w-[800px] rounded-xl bg-white top-24 inset-x-96 ml-40'>
-                        <button onClick={() => setShowSelectedImage(false)} className='absolute -right-8 -top-8'><CloseIcon width={18} height={18}/></button>
-                        <Image src={selectedImage} alt='' className='rounded-xl' />
-                    </span>
+                    <section className='fixed z-50 lg:w-[800px] rounded-xl bg-white p-2 inset-0 lg:inset-x-96 lg:inset-y-6 lg:ml-40'>
+                        <button onClick={() => setShowSelectedImage(false)} className='absolute -right-8 top-0'><CloseIcon width={18} height={18} /></button>
+                        <article>
+                            <Image src={selectedImage} alt='' className='rounded-xl' />
+                        </article>
+                    </section>
                 </>
 
             }

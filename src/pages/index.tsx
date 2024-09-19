@@ -3,9 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import Menu from "../components/Menu";
 import FotoInsta from "@/src/assets/img/420517857_391683869892802_4398154841072913416_n 2.png"
-import SanduicheNatureba from "../../public/sanduiche-natural.jpg"
+import Espiral from "../assets/lanches/FOTO GRANDE ESPIRAL UNIVERSO.webp"
 import { useHelp } from "../hooks/useHelp";
-import { useState } from "react";
 import { PinIcon } from "../assets/svgIcons";
 import Carousel from "../components/Carousel";
 
@@ -16,7 +15,6 @@ export const font = Noto_Serif_JP({
 
 export default function Home() {
   const helpHook = useHelp()
-  const [zoomIn, setZoomIn] = useState(false)
 
   return (
     <>
@@ -24,7 +22,7 @@ export default function Home() {
       <div className={`w-full overflow-x-hidden ${font.className}`}>
         <div id="home" className="relative">
           <p className="absolute z-30 inset-0 text-white text-2xl lg:text-5xl xl:text-6xl top-20 lg:top-72 xl:top-96 px-12 xl:px-72 text-center">Prepare-se para uma verdadeira revolução alimentar: saborosa, nutritiva e medicinal.</p>
-          <Image src={SanduicheNatureba} alt="" className="brightness-75 w-full" />
+          <Image src={Espiral} alt="" className="brightness-75 w-full" />
         </div>
         <div id="nosso-lema" className="w-full text-black px-8 lg:px-16 xl:px-48 2xl:px-72 xl:py-32">
           <p className="sm:text-base xl:text-lg 2xl:text-2xl">
@@ -47,34 +45,6 @@ export default function Home() {
           <Carousel
             images={helpHook.images}
           />
-          {/* <div className={`w-full flex relative ${zoomIn ? "h-full" : "h-[900px]"}`}>
-            <button onClick={helpHook.switchPicTLeft} className={`absolute left-4 inset-y-0 transition-all duration-300 hover:scale-105 ${helpHook.pictureId == 0 && "hidden"}`}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 26 41"
-                className="w-4 sm:w-7 lg:w-8"
-              >
-                <path
-                  fill={"#fff"}
-                  d="M24.378 0c.412 0 .833.138 1.148.405.632.534.632 1.408 0 1.942L3.917 20.64l21.294 18.017c.631.534.631 1.408 0 1.942-.631.535-1.665.535-2.296 0L.474 21.611c-.632-.534-.632-1.408 0-1.943L23.23.405A1.794 1.794 0 0124.379 0z"
-                ></path>
-              </svg>
-            </button>
-            <button onClick={helpHook.switchPicToRight} className={`absolute right-4 inset-y-0 rotate-180 transition-all duration-300 hover:scale-105 ${helpHook.pictureId == 2 && "hidden"}`}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 26 41"
-                className="w-4 sm:w-6 lg:w-8"
-              >
-                <path
-                  fill={"#fff"}
-                  d="M24.378 0c.412 0 .833.138 1.148.405.632.534.632 1.408 0 1.942L3.917 20.64l21.294 18.017c.631.534.631 1.408 0 1.942-.631.535-1.665.535-2.296 0L.474 21.611c-.632-.534-.632-1.408 0-1.943L23.23.405A1.794 1.794 0 0124.379 0z"
-                ></path>
-              </svg>
-            </button> 
-          </div>*/}
         </div>
 
         <section className="w-full flex flex-col items-center justify-center px-16 py-8 md:py-8 xl:py-32 text-black gap-8" id="social-media">
