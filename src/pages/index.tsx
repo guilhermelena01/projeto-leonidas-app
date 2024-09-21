@@ -4,9 +4,10 @@ import Image from "next/image";
 import Menu from "../components/Menu";
 import FotoInsta from "@/src/assets/img/420517857_391683869892802_4398154841072913416_n 2.png"
 import Espiral from "../assets/lanches/FOTO GRANDE ESPIRAL UNIVERSO.webp"
-import { useHelp } from "../hooks/useHelp";
-import { PinIcon } from "../assets/svgIcons";
 import Carousel from "../components/Carousel";
+import { useHelp } from "../hooks/useHelp";
+import { PinIcon, WhatsappIcon } from "../assets/svgIcons";
+import { useState } from "react";
 
 export const font = Noto_Serif_JP({
   weight: ["400"],
@@ -15,15 +16,27 @@ export const font = Noto_Serif_JP({
 
 export default function Home() {
   const helpHook = useHelp()
+  const [shake, setShake] = useState(false)
+  const [expandWppButton, setExpandWppButton] = useState(false)
+
+  function shakeWppButton() {
+    setShake(!shake)
+  }
+
+  setInterval(() => {
+    shakeWppButton()
+  }, 2000)
 
   return (
     <>
       <Menu />
-      <div className={`w-full overflow-x-hidden ${font.className}`}>
+      <main className={`w-full overflow-x-hidden ${font.className}`}>
+
         <div id="home" className="relative">
           <p className="absolute z-30 inset-0 text-white text-2xl lg:text-5xl xl:text-6xl top-20 lg:top-72 xl:top-96 px-12 xl:px-72 text-center">Prepare-se para uma verdadeira revolução alimentar: saborosa, nutritiva e medicinal.</p>
           <Image src={Espiral} alt="" className="brightness-75 w-full" />
         </div>
+
         <div id="nosso-lema" className="w-full text-black px-8 lg:px-16 xl:px-48 2xl:px-72 xl:py-32">
           <p className="sm:text-base xl:text-lg 2xl:text-2xl">
             Bem-vindo ao Leonida’s, onde a tradição e a inovação se unem para criar uma experiência gastronômica verdadeiramente transformadora. Inspirados pelos antigos guerreiros espartanos e pelos sábios filósofos atenienses, buscamos não apenas alimentar o corpo, mas também nutrir a alma. <br /><br />
@@ -81,7 +94,19 @@ export default function Home() {
 
           </iframe>
         </section>
-      </div>
+
+        <button
+          onMouseEnter={() => setExpandWppButton(true)}
+          onMouseLeave={() => setExpandWppButton(false)}
+          className={`fixed bottom-8 right-8 z-50 ${expandWppButton && "w-auto"}`}>
+          <span className={`bg-[#25D366] p-2 w-auto flex items-center gap-1.5 shadow-xl rounded-full text-white font-bold ${shake && "animate-shake"}`}>
+            <Link target="_blank" href="https://wa.me/5545999974830" className="flex gap-1.5">
+              <WhatsappIcon width={28} height={28} />
+              {expandWppButton && "Clique aqui e faça seu pedido"}
+            </Link>
+          </span>
+        </button>
+      </main>
     </>
 
   )
